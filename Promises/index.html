@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script defer>
+        function fetchByCb(filename, cb){
+            seTimeout(function(){
+              cb(`content: ${filename}`);
+            }, 100 * Math.random());
+        }
+    </script>
+    <script id = `solution` defer>
+        function twoSeries(file1, file2, ansArray){
+        fetchByCb(file1, (content1) => {
+            ansArray.push(content1);
+
+        fetchByCb(file2, (content2) => {
+            ansArray.push(content2);
+
+        ansArray.push("All files have been read");
+        });
+        });
+    }
+    </script>
+</body>
+</html>
+
+

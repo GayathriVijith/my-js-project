@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            border: 1px solid;
+        }
+        .red {
+            padding: 2rem;
+            background-color: red;
+            height: 10rem;
+            width: 10rem;
+            margin: auto;
+            margin-top: 10rem;
+
+        }
+        .yellow {
+            padding: 2rem;
+            background-color: yellow;
+            height: 5rem;
+            width: 5rem;
+            margin: auto;
+            margin-top: -11.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class = "red"></div>
+    <div class = "yellow"></div>    
+</body>
+<script>
+    let red = document.querySelector("red");
+    window.addEventListener("click", function(e){
+        if(e.target.classList.contains("red")){
+           window.alert("red is clicked");
+        } else if(e.target.classList.contains("yellow")){
+            window.alert("yellow is clicked");
+        }
+    })
+</script>
+</html>

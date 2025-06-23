@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script defer>
+        function fetchByPromise(fileName){
+            return new Promise(function(resolve, reject){
+                setTimeout(function(){
+                    resolve(`content ${filename}`)
+                }, 100 * Math.random());
+            });
+        }
+    </script>
+    <script id = 'solution' defer>
+            async  function twoSeries(file1, file2, ansArray){
+                 const result1 = await fetchByPromise(file1);
+                 console.log(result1);
+                 ansArray.push(result1)
+                 const result2 = await fetchByPromise(file2);
+                 ansArray.push(result2);
+                 ansArray.push("All files have been read");
+             }
+    </script>
+</body>
+</html>

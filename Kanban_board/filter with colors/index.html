@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ticket Management App</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- TOOL BOX ELEMENTS -->
+    <div class="toolbox-cont">
+        <div class="toolbox-priority-cont">
+            <div class="lightpink color"></div>
+            <div class="lightgreen color"></div>
+            <div class="lightblue color"></div>
+            <div class="black color"></div>
+        </div>
+    </div>
+
+    <!-- MAIN CONTAINER - Tickets holder -->
+    <div class="main-cont">
+        <!-- <div class="ticket-cont">
+            <div class="ticket-color"></div>
+            <div class="ticket-id">id 1</div>
+            <div class="task-area"> this  is task 1</div>
+            <div class="ticket-lock">
+              <i class="fa-solid fa-lock"></i>
+           </div> -->
+    </div>
+    
+
+    <!-- MODAL - Ticket generator window -->
+    <div class="modal-cont">
+
+        <textarea class="textArea-cont" placeholder="Enter Your Task" spellcheck="false">
+
+       </textarea>
+
+
+        <div class="priority-colors-container">
+            <div class="lightpink priority-color"></div>
+            <div class="lightgreen priority-color"></div>
+            <div class="lightblue priority-color"></div>
+            <div class="black priority-color active"></div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+
+    <script>
+        // Write your solution here =====================================================
+let filterPaneColorDiv = document.querySelectorAll('.toolbox-priority-cont .color')
+let mainContainer = document.querySelector('.main-cont')
+filterPaneColorDiv.forEach((item) =>{
+// adding event listener to all Colors in filter Pane for both click and double click
+item.addEventListener('click', e => {
+let filteredColor = e.target.classList[0];
+
+while(mainContainer.firstChild)
+mainContainer.removeChild(mainContainer.firstChild)
+ticketsArr.forEach(function (ticket) {
+if(ticket.ticketColor == filteredColor)
+createTicket(ticket.ticketTask, ticket.ticketColor, ticket.ticketID);
+})
+
+})
+
+item.addEventListener('dblclick', ()=>{
+while(mainContainer.firstChild)
+mainContainer.removeChild(mainContainer.firstChild)
+ticketsArr.forEach(function (ticket) {
+createTicket(ticket.ticketTask, ticket.ticketColor, ticket.ticketID);
+})
+})
+})
+</script>
+</body>
+</html>

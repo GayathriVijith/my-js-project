@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p{
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>
+        Press 1 to go to Section 1 <br />
+        Press 2 to go to Section 2 <br />
+        Press 3 to go to Section 3 <br />
+        Press b to go to Section b <br />
+        Press t to go to Section t <br />       
+    </h1>
+    <h2 id = "s1">Section 1</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi quia commodi consequatur, magni perspiciatis, asperiores nobis sint tempore deleniti odit est id voluptatem amet possimus consectetur, quis impedit? Consequuntur quis praesentium quaerat minus architecto adipisci laudantium. Aut vitae, cumque voluptatibus quam soluta, voluptate dolorum id molestiae voluptas, officia dolore suscipit!
+    </p>
+    <h2 id = "s2">Section 2</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos at inventore quis, possimus minus ab, perferendis deleniti excepturi iusto assumenda deserunt commodi sequi architecto placeat ex aliquam, odit sed fugit dolorum magnam rem unde ipsum quam? Velit doloribus quos commodi similique. Placeat voluptatibus eius id blanditiis cupiditate. Mollitia porro quisquam neque repellat accusantium dicta itaque eveniet quasi provident. Non mollitia, qui alias aut rem at et ducimus tempora magnam iste voluptatibus odio officia placeat voluptatem possimus reprehenderit. Quibusdam consequatur ratione exercitationem temporibus ipsam. Aperiam, adipisci. Praesentium neque molestias cum expedita fugit recusandae consequatur, perspiciatis quaerat quae at? Quibusdam, eos omnis.
+    </p>
+    <h2 id = "s3">Section 3</h2>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam, dicta! Odit aliquid distinctio, fuga quisquam consequatur quo ducimus quis enim repudiandae quod nesciunt officia saepe hic adipisci, expedita doloribus incidunt. Aperiam reiciendis, distinctio itaque, accusantium dignissimos, voluptatibus quo cupiditate consectetur esse laudantium omnis non minus enim odit officia. Ex harum rerum quod dolores maiores culpa dolor modi! Possimus voluptate eveniet sunt id incidunt minus perferendis ex tenetur ipsam dolor blanditiis odit ipsum ab nostrum ea nemo, illum reprehenderit perspiciatis eum inventore soluta reiciendis accusamus a tempora! Fuga ab temporibus consequuntur, similique, iure sapiente corrupti ad necessitatibus tenetur sunt molestias provident quis repellat praesentium ipsum, placeat quod ipsa quo neque. Commodi incidunt soluta, quo a magnam reiciendis nihil iure. Nobis qui excepturi similique neque ex numquam, impedit suscipit accusamus maiores. Ad soluta voluptatibus ducimus illum corporis, perspiciatis quibusdam at dolore cumque assumenda similique, voluptatum sit atque voluptates eaque hic aut quos.
+    </p>
+<script>
+    const s1 = document.querySelector("#s1");
+    const s2 = document.querySelector("#s2");
+    const s3 = document.querySelector("#s3");
+    document.addEventListener("keydown", function(e){
+        console.log(e.key);
+        if(e.key == 1){
+           s1.scrollIntoView({behavior: "smooth"});
+        }else if(e.key == 2){
+           s2.scrollIntoView();
+        }else if(e.key == 3){
+           s3.scrollIntoView();
+        }else if(e.key == "b"){
+            window.scrollBy(0, document.querySelector("html").getBoundingClientRect().height);
+        }else if(e.key == "t"){
+            window.scrollBy(0, -document.querySelector("html").getBoundingClientRect().height);
+        }
+    });
+</script>
+</body>
+</html>

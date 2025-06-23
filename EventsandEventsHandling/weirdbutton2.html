@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="doubleHolder">
+        <button class="double">double</button>
+    </div>
+    <script>
+const btn = document.querySelector('#doubleHolder');
+function cb(e) {
+let btnFirst = document.createElement("button");
+btnFirst.setAttribute('class', 'double');
+btnFirst.innerHTML = "First";
+btnFirst.addEventListener('click', cb);
+let btnSecond = document.createElement("button"); 
+btnSecond.setAttribute('class', 'double'); 
+btnSecond.innerHTML = "Second"; 
+btnSecond.addEventListener('click', cb); 
+e.target.parentElement.appendChild(btnFirst); 
+e.target.parentElement.appendChild(btnSecond); 
+e.target.remove(); 
+} 
+btn.addEventListener('click', cb);
+</script>
+</body> 
+</html>

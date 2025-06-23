@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id = "btn">Click Me</button>
+    <!-- <button class = "btn2">Click Me Also</button> -->
+    <script>
+        // const btnElement = document.getElementById('btn');
+        const btnElement = document.querySelector('#btn'); //id selector
+        console.log(btnElement);
+        btnElement.addEventListener('click', function(){
+            console.log("Button Clicked");
+            const newElement = document.createElement('div');
+            newElement.innerText = "Hello World!";
+            const body = document.querySelector('body');
+            body.appendChild(newElement);
+
+        })
+        // const btnElement2 = document.querySelector('.btn2'); //class selector
+        // const btnElement3 = document.querySelector('button');//selects all the buttons using "tag - button tag"
+        console.log("element", btnElement);
+        // console.log("element", btnElement2);
+        // console.log(btnElement3);
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script> src = "proto.js"
+// const obj ={}
+// console.log(obj.toString());
+// --------------------------------------------------
+
+// const arr = [1,2,3]
+// console.log(arr.join("*"));
+// ------------------------------------------------
+
+// const user = {
+//     name:"Gayathri",
+//     age: 33
+// }
+// console.log(user);
+// ------------------------------------
+
+// const arr1 = [1,2,3]
+// console.log(arr1);
+// -----------------------------------
+
+// const animal = {
+//     eat: true,
+//     sleep: true,
+//     walk(){
+//         console.log('The animal walk')
+//     }  
+// }
+// console.log(animal);
+// animal.walk();
+
+// const rabbit = {
+//     areCute: true,
+// }
+// rabbit.__proto__ = animal;
+// console.log(rabbit);
+// console.log(rabbit.walk());
+// ----------------------------------------
+
+// const animal = {
+//     eat: true,
+//     sleep: true,
+//     walk(){
+//         console.log('The animal walk')
+//     }  
+// }
+// console.log(animal);
+
+// const herbivore = {
+//     eatsMeat: 'no',
+//     __proto__ : animal
+// }
+
+// const carnivore = {
+//     eatsMeat: 'yes',
+//     __proto__ : animal
+// }
+
+// const rabbit = {
+//     canJump: true,
+//     __proto__: herbivore
+// }
+
+// const tiger = {
+// canKill: 'yes',
+// __proto__: carnivore
+// }
+
+// console.log(rabbit.eatsMeat);
+// console.log(tiger.eatsMeat);
+// console.log(rabbit.dance);
+
+// console.log(Object.keys(rabbit)); 
+// console.log(Object.keys(animal)); 
+
+// for(let key in rabbit){ 
+//     if(rabbit.hasOwnProperty(key)){
+//     console.log("direct key:", key)
+// }
+// console.log(key)
+// }
+// -----------------------------------------
+
+// function User (name){
+//     this.name = name;
+//     this.msg = function(){
+//         console.log(`Hello ${this.name}`);
+//     }
+// }
+// const user1 = new User("Aadhvik");
+// const user2 = new User("Gayathri");
+// console.log(user1);
+// console.log(user2);
+// console.log(user1.msg === user2.msg); // false
+// ----------------------------------
+
+// function betterUser(name){
+//     this.name = name;
+// }
+// betterUser.prototype.msg = function(){
+//     console.log(`Hello ${this.name}`);
+// }
+// const user3 = new betterUser('Aadhvik');
+// const user4 = new betterUser('Gayathri');
+// console.log(user3);
+// console.log(user4);
+// console.log(user3.msg === user4.msg);
+// -------------------------------------------
+
+// String.prototype.msg = function(pattern){
+//     return this.split("").join(pattern);
+// }
+// console.log("scaler".msg("-"));
+// console.log("scaler".msg("*"));
+// console.log("scaler".msg("$"));
+// --------------------------------------
+// const carPrototype = {
+//     displayInfo: function(){
+//         return `This is a ${this.year} ${this.model}`;
+//     }
+// };
+
+// const car1 = Object.create(carPrototype);
+// car1.year = 2011;
+// car1.model = "Toyota Innova";
+
+// const car2 = Object.create(carPrototype);
+// car2.model = "Hyundai i10";
+// car2.year = 2019;
+
+// console.log(car1.displayInfo());
+// console.log(car2.displayInfo());
+// -----------------------------------------
+// const obj = {name: 'Sample Output'};
+// console.log(obj.toString());
+
+// obj.__proto__ = null;
+// console.log(obj.toString());
+// try{
+//    console.log(obj.toString());
+// } catch(e){
+//     console.log("error", e.message);
+// }
+// --------------------------------------
+// function Animal(){}
+// console.log(Animal.prototype)//{}, constructor: f(Animal), prototype: object.
+// console.log(Animal.prototype.constructor) //ƒ Animal(){}
+// -------------------------------------------
+// function Animal(){
+//     this.eats = false;
+// }
+// console.log(Animal.prototype.constructor);
+// const rabbit = new Animal()
+// console.log("rabbit origin:", rabbit instanceof Animal); //does rabbit originated from Animal - true.
+// --------------------------------------------
+// function Animal(){}
+//     Animal.prototype.speak = function(){
+//         console.log("Animal speak");
+//     }
+
+// function Dog(){}
+// Dog.prototype = Object.create(Animal.prototype);
+// const dog = new Dog();
+// console.log(dog); //Dog{}
+// console.log(Dog.prototype.constructor); //f Animal(){}
+// console.log(dog.constructor.name); //Animal
+// ------------------------------------------------------
+// function Animal(){}
+//     Animal.prototype.speak = function(){
+//         console.log("Animal speak");
+//     }
+// function Dog(){}
+// Dog.prototype = Object.create(Animal.prototype);
+// Dog.prototype.constructor = Dog;
+// const dog = new Dog();
+// dog.speak();
+// console.log(dog); //Dog{}
+// console.log(Dog.prototype.constructor); //f Dog(){}
+// console.log(dog.constructor.name); //Dog
+// // ------------------------------------
+// function Rabbit(){}
+// Rabbit.prototype = {
+//     eats: true,
+// };
+// let rabbit = new Rabbit();
+// // Rabbit.prototype = {};
+// Rabbit.prototype.eats = false;
+// console.log(rabbit.eats);//true
+// console.log(Rabbit.eats);//ud, You're checking if the function Rabbit has a property eats.
+// //Rabbit is a function. We never set a property eats directly on Rabbit.
+// console.log(rabbit.__proto__);// { eats: true }
+// console.log(rabbit.__proto__ === Rabbit.prototype);//false, rabbit.__proto__ points to the old 
+//// { eats: true }. Rabbit.prototype now points to a new empty object {}.
+// -------------------------------
+// const animal = {
+//     jumps: null,
+// };
+// const rabbits = {
+//     __proto__: animal,
+//     jumps: true,
+// };
+
+// alert(rabbits.jumps);
+// delete(rabbits.jumps);
+
+// alert(rabbits.jumps);
+// delete(rabbits.jumps);
+
+// alert(rabbits.jumps);
+// delete(rabbits.jumps);
+    </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="doubleHolder">
+        <button class="double">double</button>
+    </div>
+    <script>
+
+        // Write your JS program here =========
+        let doubleBtn = document.querySelector("#doubleHolder");
+        doubleBtn.addEventListener("click", function (e){
+        if(e.target.classList.contains("double")){
+        e.target.remove();
+        let btn = document.createElement("button");
+        btn.setAttribute("class", "double");
+        btn.innerHTML = "double";
+        doubleBtn.appendChild(btn);
+        let btn2 = document.createElement("button");
+        btn2.setAttribute("class", "double");
+        btn2.innerHTML = "double";
+        doubleBtn.appendChild(btn2);
+        }
+        })
+        </script>
+</body>
+
+</html>

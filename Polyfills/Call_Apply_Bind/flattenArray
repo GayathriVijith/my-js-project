@@ -1,0 +1,24 @@
+function flattenArray(arr){
+    return arr.reduce((flatArray, item) => { //return a flatArray, taking each item one by one. 
+    //flatArray - empty array, accumulates the value, item - individual item is pushed to the func.
+        if(Array.isArray(item)){ //if sub-array itself an array.
+            flatArray.push(...flattenArray(item)); //use spread operator, and push the value to flatArray, item = [2, 3] → array → flattenArray([2, 3]) returns [2, 3]
+            // spread: flatArray.push(...[2, 3]) → flatArray = [1, 2, 3]
+        } else{
+            flatArray.push(item);
+        }
+            return flatArray; 
+    }, []);
+}
+ 
+const nestedArray = [1, [2, 3], [4, [5, 6]]];
+const flattenedArray = flattenArray(nestedArray);
+console.log(flattenedArray);
+
+//use reduce to return a single array. Reduce first takes acc, 
+//the final value so here it is flatarray. Passing initial value of the 
+//flatArray as an empty array.
+//If the returned array is an array again, then call the flattenArray recursively.
+//For.eg calling flattenarray on [5,6] returns an individual items 5, 6.
+//How to get individual items from an array, using spread operator.
+//Push the individual items into the flatArray.

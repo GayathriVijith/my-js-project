@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *{
+    box-sizing: border boxing
+}
+body {
+display: flex;
+flex-wrap: wrap;
+justify-content: space-around;
+padding-top: 5rem;
+}
+.pink{
+    background-color: pink;
+    box-shadow: 0px 0px 6px 5px;
+}
+.yellow{
+    background-color: yellow;
+    box-shadow: 0px 0px 6px 5px;
+}
+.card{
+    border:1px solid;
+    height:10rem;
+    width:10rem;
+    margin:2rem;
+}
+    </style>
+</head>
+<body> 
+    <div class = "card" data-color = "pink"></div>
+    <div class = "card" data-color = "yellow"></div>
+    <script>
+    const cardsNodeList = document.querySelectorAll('.card');
+    console.log(cardsNodeList);
+    for(let i = 0; i < cardsNodeList.length; i++){
+        cardsNodeList[i].addEventListener('dblclick', function(e){
+            console.log(e.target);
+            const card = e.target;
+            const classToBeAttached = card.getAttribute('data-color');
+            console.log(classToBeAttached);
+            card.classList.add(classToBeAttached);
+            card.setAttribute('data-color', 'used');
+        })
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+const flattenObj = (obj) => { //func. name 'flattenObj', that will take 'obj' as it's object.
+    let result = {}; //inside the func. initialise an empty obj as 'result',
+    // to hold the flattened key, value pairs
+    for(const i in obj){ //loop through the obj of the i/p obj array
+        if(typeof obj[i] === "object" && !Array.isArray(obj[i])){
+            const temp = flattenObj(obj[i]);
+            for(const j in temp){ //loop through the properties
+                result[i + "." + j] = temp[j];
+            }
+        } else{
+            result[i] = obj[i];
+        }
+    }
+    return result;
+};
+const response = {
+    name: "Sam",
+    age: 24,
+    characs:{
+       height: 6,
+       complexion: "dark",
+       hair: "black",
+    },
+    techStack: {
+        lang: "JS",
+        framework: {
+            name: "react",
+            version: "es6",
+        },
+    },
+};
+console.log(flattenObj(response)); // call 'flattenObj' & pass response as argument.
+
+// j = "height" → temp["height"] = 6
+// j = "hair" → temp["hair"] = "black"
+// temp[j] gives you 6 when j = "height"
+// temp[j] gives you "black" when j = "hair"
+// temp is a flattened version of a nested object.
+// temp[j] gives the value for each key inside temp.
+// 9444260907
+
+// obj[i] = obj["characs"] = {
+//   height: 6,
+//   complexion: "dark",
+//   hair: "black"
+// }
+
+// flattenObj({
+//   height: 6,
+//   complexion: "dark",
+//   hair: "black",
+// });
+
+// temp = flattenObj(obj["characs"]);
+
+// temp = {
+//   height: 6,
+//   complexion: "dark",
+//   hair: "black"
+// };
+
+// result["characs.height"] = 6;
+// result["characs.complexion"] = "dark";
+// result["characs.hair"] = "black";
+

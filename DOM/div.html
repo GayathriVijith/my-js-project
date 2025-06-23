@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Say Hello</button>
+</body>
+<script>
+        document.querySelector('button').addEventListener('click', function(e){
+        let div = document.createElement('div');
+        div.innerText = "Hello";
+        document.querySlector('body').appenChild(div);
+    });
+</script>
+</html>
